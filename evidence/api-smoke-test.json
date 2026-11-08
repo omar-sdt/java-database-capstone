@@ -1,0 +1,217 @@
+[
+  {
+    "method": "POST",
+    "path": "/patient/login",
+    "status": 401,
+    "response": {
+      "error": "Password does not match"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/doctor",
+    "status": 200,
+    "response": {
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr Alice Martin",
+          "specialty": "Cardiology",
+          "email": "doctor1@example.com",
+          "phone": "0600000001",
+          "availableTimes": [
+            "09:00-10:00",
+            "10:00-11:00",
+            "14:00-15:00",
+            "15:00-16:00"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Dr Karim Benali",
+          "specialty": "Dermatology",
+          "email": "doctor2@example.com",
+          "phone": "0600000002",
+          "availableTimes": [
+            "09:00-10:00",
+            "10:00-11:00",
+            "14:00-15:00",
+            "15:00-16:00"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Dr Sarah Wilson",
+          "specialty": "General Medicine",
+          "email": "doctor3@example.com",
+          "phone": "0600000003",
+          "availableTimes": [
+            "09:00-10:00",
+            "10:00-11:00",
+            "14:00-15:00",
+            "15:00-16:00"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/doctor/filter/Alice/am/Cardiology",
+    "status": 200,
+    "response": {
+      "doctors": [
+        {
+          "id": 1,
+          "name": "Dr Alice Martin",
+          "specialty": "Cardiology",
+          "email": "doctor1@example.com",
+          "phone": "0600000001",
+          "availableTimes": [
+            "09:00-10:00",
+            "10:00-11:00",
+            "14:00-15:00",
+            "15:00-16:00"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/patient/1/patient/<TOKEN>",
+    "status": 200,
+    "response": {
+      "appointments": [
+        {
+          "id": 1,
+          "doctorId": 1,
+          "doctorName": "Dr Alice Martin",
+          "patientId": 1,
+          "patientName": "Demo Patient 1",
+          "patientEmail": "patient1@example.com",
+          "patientPhone": "0700000001",
+          "patientAddress": "Demo Street 1",
+          "appointmentTime": "2026-11-09T09:00:00",
+          "status": 0,
+          "appointmentDate": "2026-11-09",
+          "appointmentTimeOnly": "09:00:00",
+          "endTime": "2026-11-09T10:00:00"
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/patient/2/patient/<TOKEN>",
+    "status": 403,
+    "response": {
+      "message": "Access denied"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/patient/invalid",
+    "status": 401,
+    "response": {
+      "error": "Invalid or expired token"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/doctor/availability/patient/1/2026-11-09/<TOKEN>",
+    "status": 200,
+    "response": {
+      "message": [
+        "14:00-15:00",
+        "15:00-16:00"
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/appointments/<TOKEN>",
+    "status": 403,
+    "response": {
+      "message": "Patient identity mismatch"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/appointments/<TOKEN>",
+    "status": 201,
+    "response": {
+      "message": "Appointment Booked Successfully"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/appointments/<TOKEN>",
+    "status": 400,
+    "response": {
+      "message": "Appointment already booked for given time or Doctor not available"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/appointments/2026-11-09/null/<TOKEN>",
+    "status": 200,
+    "response": {
+      "appointments": [
+        {
+          "id": 1,
+          "doctorId": 1,
+          "doctorName": "Dr Alice Martin",
+          "patientId": 1,
+          "patientName": "Demo Patient 1",
+          "patientEmail": "patient1@example.com",
+          "patientPhone": "0700000001",
+          "patientAddress": "Demo Street 1",
+          "appointmentTime": "2026-11-09T09:00:00",
+          "status": 0,
+          "appointmentDate": "2026-11-09",
+          "appointmentTimeOnly": "09:00:00",
+          "endTime": "2026-11-09T10:00:00"
+        },
+        {
+          "id": 4,
+          "doctorId": 1,
+          "doctorName": "Dr Alice Martin",
+          "patientId": 4,
+          "patientName": "Demo Patient 4",
+          "patientEmail": "patient4@example.com",
+          "patientPhone": "0700000004",
+          "patientAddress": "Demo Street 4",
+          "appointmentTime": "2026-11-09T10:00:00",
+          "status": 0,
+          "appointmentDate": "2026-11-09",
+          "appointmentTimeOnly": "10:00:00",
+          "endTime": "2026-11-09T11:00:00"
+        },
+        {
+          "id": 6,
+          "doctorId": 1,
+          "doctorName": "Dr Alice Martin",
+          "patientId": 1,
+          "patientName": "Demo Patient 1",
+          "patientEmail": "patient1@example.com",
+          "patientPhone": "0700000001",
+          "patientAddress": "Demo Street 1",
+          "appointmentTime": "2026-11-09T14:00:00",
+          "status": 0,
+          "appointmentDate": "2026-11-09",
+          "appointmentTimeOnly": "14:00:00",
+          "endTime": "2026-11-09T15:00:00"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/prescription/<TOKEN>",
+    "status": 201,
+    "response": {
+      "message": "Prescription saved"
+    }
+  }
+]

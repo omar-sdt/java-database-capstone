@@ -1,0 +1,55 @@
+{
+    "doctors": [
+        {
+            "id": 1,
+            "name": "Dr Alice Martin",
+            "specialty": "Cardiology",
+            "email": "doctor1@example.com",
+            "phone": "0600000001",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "14:00-15:00",
+                "15:00-16:00"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Dr Karim Benali",
+            "specialty": "Dermatology",
+            "email": "doctor2@example.com",
+            "phone": "0600000002",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "14:00-15:00",
+                "15:00-16:00"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Dr Sarah Wilson",
+            "specialty": "General Medicine",
+            "email": "doctor3@example.com",
+            "phone": "0600000003",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00",
+                "14:00-15:00",
+                "15:00-16:00"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Dr Emma Laurent",
+            "specialty": "cardiologist",
+            "email": "emma.laurent@example.com",
+            "phone": "0600000004",
+            "availableTimes": [
+                "09:00-10:00",
+                "10:00-11:00"
+            ]
+        }
+    ]
+}
+

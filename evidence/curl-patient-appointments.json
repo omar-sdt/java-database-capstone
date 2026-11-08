@@ -1,0 +1,35 @@
+{
+    "appointments": [
+        {
+            "id": 1,
+            "doctorId": 1,
+            "doctorName": "Dr Alice Martin",
+            "patientId": 1,
+            "patientName": "Demo Patient 1",
+            "patientEmail": "patient1@example.com",
+            "patientPhone": "0700000001",
+            "patientAddress": "Demo Street 1",
+            "appointmentTime": "2026-11-09T09:00:00",
+            "status": 1,
+            "appointmentDate": "2026-11-09",
+            "appointmentTimeOnly": "09:00:00",
+            "endTime": "2026-11-09T10:00:00"
+        },
+        {
+            "id": 6,
+            "doctorId": 1,
+            "doctorName": "Dr Alice Martin",
+            "patientId": 1,
+            "patientName": "Demo Patient 1",
+            "patientEmail": "patient1@example.com",
+            "patientPhone": "0700000001",
+            "patientAddress": "Demo Street 1",
+            "appointmentTime": "2026-11-09T14:00:00",
+            "status": 0,
+            "appointmentDate": "2026-11-09",
+            "appointmentTimeOnly": "14:00:00",
+            "endTime": "2026-11-09T15:00:00"
+        }
+    ]
+}
+
